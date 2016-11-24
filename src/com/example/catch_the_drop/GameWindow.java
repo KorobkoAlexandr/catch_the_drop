@@ -23,6 +23,8 @@ public class GameWindow extends JFrame {
     private static float drop_top = -100;
     //speed of drop
     private static float drop_v = 200;
+    //score field
+    private static int score;
 
     public static void main(String[] args) throws IOException {
 
@@ -63,6 +65,10 @@ public class GameWindow extends JFrame {
                     drop_top = -100;
                     drop_left = (float) Math.random() * (game_field.getWidth() - drop.getWidth(null));
                     drop_v += 20;
+                    //increment scores
+                    score++;
+                    //show scores as window title
+                    game_Window.setTitle("Your score is: " + score);
                 }
             }
         });
@@ -98,7 +104,6 @@ public class GameWindow extends JFrame {
             onRepaint(g);
             //for often drawing panel
             repaint();
-
         }
     }
 
