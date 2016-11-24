@@ -72,7 +72,6 @@ public class GameWindow extends JFrame {
                 }
             }
         });
-
         //add new panel to game window instance
         game_Window.add(game_field);
         //set visible for game window
