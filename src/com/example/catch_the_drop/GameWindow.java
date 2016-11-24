@@ -13,6 +13,9 @@ public class GameWindow extends JFrame {
     private static Image background;
     private static Image game_over;
     private static Image drop;
+    private static float drop_left = 200;
+    private static float drop_top = 200;
+
 
     public static void main(String[] args) throws IOException {
         background = ImageIO.read(GameWindow.class.getResourceAsStream("background.png"));
@@ -31,8 +34,8 @@ public class GameWindow extends JFrame {
 
     private static void onRepaint(Graphics g) {
         g.drawImage(background, 0, 0, null);
-        g.drawImage(drop, 100, 100, null);
-        g.drawImage(game_over, 280, 120, null);
+        g.drawImage(drop, (int) drop_left, (int) drop_top, null);
+//        g.drawImage(game_over, 280, 120, null);
     }
 
     private static class GameField extends JPanel {
